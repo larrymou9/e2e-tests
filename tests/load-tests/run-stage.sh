@@ -9,6 +9,8 @@ options=""
 
 trap "date -Ins --utc >ended" EXIT
 date -Ins --utc >started
+echo ">> DEBUG: FORK_TARGET='${FORK_TARGET:-<unset>}'  MY_GITHUB_ORG='${MY_GITHUB_ORG:-<unset>}'"
+
 go run loadtest.go \
     --applications-count "${APPLICATIONS_COUNT:-1}" \
     --build-pipeline-selector-bundle "${BUILD_PIPELINE_SELECTOR_BUNDLE:-}" \
